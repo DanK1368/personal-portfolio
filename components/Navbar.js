@@ -15,9 +15,9 @@ const Navbar = () => {
 
   return (
     <header className=" fixed w-full h-20 shadow-xl z-10 ">
-      <nav className=" flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
+      <div className=" flex justify-between items-center w-full h-full px-2 sm:px-6 md:px-10 2xl:px-16 ">
         <Image src={logo} alt="/" width={75} height={75} />
-        <div>
+        <nav>
           <ul className=" hidden md:flex ">
             <Link href="/">
               <li className=" ml-10 text-sm uppercase hover:border-b hover:mb-[-1px] ">
@@ -51,8 +51,8 @@ const Navbar = () => {
               <AiOutlineMenu size={25} />
             </button>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       <div
         className={
