@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Link from "next/link";
-import { HiOutlineChevronDoubleUp } from "react-icons/all";
+import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 const Contact = () => {
   return (
