@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import dropshopImg from "../public/assets/dropshop-project.png";
 import skilledImg from "../public/assets/skilled-screenshot.png";
 import todoImg from "../public/assets/todo-screenshot.png";
