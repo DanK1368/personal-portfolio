@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Main = () => {
   return (
-    <main className=" w-full h-screen text-center ">
+    <main id="home" className=" w-full h-screen text-center ">
       <div className=" max-w-[1240px] w-full h-full mx-auto flex justify-center items-center ">
         <div>
           <h1 className=" py-4 text-gray-700 leading-snug ">

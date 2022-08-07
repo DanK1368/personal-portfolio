@@ -10,7 +10,7 @@ import pythonIcon from "../public/assets/icons/python.png";
 
 const Skills = () => {
   return (
-    <section className=" w-full lg:h-screen p-2 ">
+    <section id="skills" className=" w-full lg:h-screen p-2 ">
       <div className=" max-w-[1240px] mx-auto flex flex-col justify-center h-full ">
         <p className=" uppercase text-xl tracking-widest text-primary ">
           Skills

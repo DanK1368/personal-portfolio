@@ -3,7 +3,10 @@ import profilePic from "../public/assets/profilePic.jpeg";
 
 const About = () => {
   return (
-    <section className=" w-full md:h-screen p-2 flex justify-center items-center py-16 ">
+    <section
+      id="about"
+      className=" w-full md:h-screen p-2 flex justify-center items-center py-16 "
+    >
       <div className=" max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 place-content-center">
         <div className=" col-span-2 place-self-center">
           <p className=" uppercase text-xl tracking-widest text-primary ">
