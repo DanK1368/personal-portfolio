@@ -3,8 +3,8 @@ import { projects } from "../constants/projects";
 
 const Projects = () => {
   return (
-    <section id="projects" className=" w-full ">
-      <div className=" max-w-[1240px] mx-auto px-2 py-16 ">
+    <section id="projects" className=" w-full lg:h-screen ">
+      <div className=" max-w-[1240px] mx-auto px-2 py-24 ">
         <p className=" text-xl tracking-widest uppercase text-primary ">
           Projects
         </p>
