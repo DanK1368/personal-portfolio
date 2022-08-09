@@ -94,29 +94,41 @@ const Navbar = () => {
             </p>
           </div>
           <div className=" py-4 flex flex-col ">
-            <ul className=" uppercase ">
+            <ul className=" uppercase flex flex-col">
               <Link href="/">
-                <li className=" py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
+                <button
+                  onClick={() => setShowNav(false)}
+                  className="uppercase  text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white"
+                >
                   Home
-                </li>
+                </button>
               </Link>
-              <Link href="/">
-                <li className=" py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
+              <Link href={"/#about"}>
+                <button
+                  onClick={() => setShowNav(false)}
+                  className="uppercase text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white"
+                >
                   About
-                </li>
+                </button>
               </Link>
-              <Link href="/">
-                <li className=" py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
+              <Link href={"/#skills"}>
+                <button
+                  onClick={() => setShowNav(false)}
+                  className="uppercase text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white"
+                >
                   Skills
-                </li>
+                </button>
               </Link>
-              <Link href="/">
-                <li className=" py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
+              <Link href={"/#projects"}>
+                <button
+                  onClick={() => setShowNav(false)}
+                  className="uppercase text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white"
+                >
                   Projects
-                </li>
+                </button>
               </Link>
-              <Link href="/">
-                <li className=" py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
+              <Link href={"/#contact"}>
+                <li className="uppercase text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
                   Contact Me
                 </li>
               </Link>
