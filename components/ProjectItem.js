@@ -28,7 +28,7 @@ const ProjectItem = ({ image, title, tags, source, liveSite }) => {
             href={source}
             target="_blank"
             rel="noreferrer"
-            className="badge badge-info text-white hover:scale-110"
+            className="badge badge-info text-white lg:badge-lg  hover:scale-110"
           >
             Source
           </a>
@@ -36,7 +36,7 @@ const ProjectItem = ({ image, title, tags, source, liveSite }) => {
             href={liveSite}
             target="_blank"
             rel="noreferrer"
-            className="badge badge-info text-white hover:scale-110"
+            className="badge badge-info text-white lg:badge-lg hover:scale-110"
           >
             Live Site
           </a>
