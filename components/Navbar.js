@@ -4,8 +4,10 @@ import logo from "../public/assets/icons/logo.svg";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
   const [showNav, setShowNav] = useState(false);
   const [shadow, setShadow] = useState(false);
 
@@ -21,35 +23,57 @@ const Navbar = () => {
   return (
     <header
       className={
-        shadow ? "fixed w-full h-20 shadow-xl z-10" : "fixed w-full h-20 z-10 "
+        shadow
+          ? "fixed w-full h-20 shadow-xl z-10 bg-white"
+          : "fixed w-full h-20 z-10 bg-white "
       }
     >
       <div className=" flex justify-between items-center w-full h-full px-2 sm:px-6 md:px-10 2xl:px-16 ">
         <Image src={logo} alt="/" width={75} height={75} />
         <nav>
-          <ul className=" hidden md:flex ">
+          <ul className=" hidden md:flex md:justify-center md:items-center md:gap-10  ">
             <Link href="/">
-              <li className=" ml-10 text-sm uppercase hover:border-b hover:mb-[-1px] ">
+              <li
+                className={` text-sm uppercase hover:border-b hover:border-b-primary hover:mb-[-1px] ${
+                  router.asPath === "/" ? "text-primary" : ""
+                }`}
+              >
                 Home
               </li>
             </Link>
             <Link href={"/#about"}>
-              <li className=" ml-10 text-sm uppercase hover:border-b hover:mb-[-1px] ">
+              <li
+                className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
+                  router.asPath === "/#about" ? "text-primary" : ""
+                } `}
+              >
                 About
               </li>
             </Link>
             <Link href={"/#skills"}>
-              <li className=" ml-10 text-sm uppercase hover:border-b hover:mb-[-1px] ">
+              <li
+                className={` text-sm uppercase hover:border-b hover:mb-[-1px]  ${
+                  router.asPath === "/#skills" ? "text-primary" : ""
+                }`}
+              >
                 Skills
               </li>
             </Link>
             <Link href={"/#projects"}>
-              <li className=" ml-10 text-sm uppercase hover:border-b hover:mb-[-1px] ">
+              <li
+                className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
+                  router.asPath === "/#projects" ? "text-primary" : ""
+                }`}
+              >
                 Projects
               </li>
             </Link>
             <Link href={"/#contact"}>
-              <li className=" ml-10 text-sm uppercase hover:border-b hover:mb-[-1px] ">
+              <li
+                className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
+                  router.asPath === "/#contact" ? "text-primary" : ""
+                }`}
+              >
                 Get In Touch
               </li>
             </Link>
