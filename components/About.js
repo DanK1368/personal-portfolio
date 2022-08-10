@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className=" w-full md:h-screen p-2 flex justify-center items-center py-16 "
+      className=" w-full lg:min-h-screen p-2 flex justify-center items-center py-24 "
     >
       <div className=" max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 place-content-center">
         <div className=" col-span-2 place-self-center">
@@ -23,14 +23,14 @@ const About = () => {
           <p>View some of my work</p>
         </div>
 
-        <div className=" avatar h-auto m-auto shadow-xl shadow-gray-400 rounded-full hover:scale-105 ease-in duration-100">
-          <div className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div className="flex justify-center items-center pt-10  avatar h-auto m-auto  hover:scale-105 ease-in duration-100">
+          <div className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl shadow-gray-400 rounded-full">
             <Image
-              className="rounded-full object-cover  "
+              className="rounded-full object-cover "
               src={profilePic}
               alt=""
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
           </div>
         </div>
