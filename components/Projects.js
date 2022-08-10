@@ -3,7 +3,7 @@ import { projects } from "../constants/projects";
 
 const Projects = () => {
   return (
-    <section id="projects" className=" w-full lg:h-screen ">
+    <section id="projects" className=" w-full lg:min-h-screen ">
       <div className=" max-w-[1240px] mx-auto px-2 py-24 ">
         <p className=" text-xl tracking-widest uppercase text-primary ">
           Projects
