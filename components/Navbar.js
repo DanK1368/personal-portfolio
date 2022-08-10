@@ -113,7 +113,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className=" border-b border-gray-300 my-4 ">
-            <p className=" w-[85%] md:w-[90%] py-4 ">
+            <p className=" w-[85%] text-secondary md:w-[90%] py-4 ">
               Junior Full-Stack Developer
             </p>
           </div>
@@ -157,7 +157,7 @@ const Navbar = () => {
                 </li>
               </Link>
             </ul>
-            <div className=" pt-40 ">
+            <div className=" pt-20 sm:pt-24 md:pt-32  ">
               <p className=" uppercase tracking-widest text-secondary ">
                 Get In Touch
               </p>
