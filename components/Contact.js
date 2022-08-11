@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import mailImg from "../public/assets/mail.svg";
 import Image from "next/image";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -7,6 +8,51 @@ import Link from "next/link";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 const Contact = () => {
+  const [formValues, setFormValues] = useState({
+    user_subject: "",
+    user_name: "",
+    user_mobile: "",
+    user_email: "",
+    user_message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormValues((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.value };
+    });
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_jen6dp3",
+        "contact_form",
+        form.current,
+        "bPTohevK5xyBpL71p"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          if (result.status === 200) {
+            setFormValues({
+              user_subject: "",
+              user_name: "",
+              user_mobile: "",
+              user_email: "",
+              user_message: "",
+            });
+          }
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section id="contact" className=" w-full lg:min-h-screen ">
       <div className="max-w-[1240px] m-auto px-2 py-24 w-full">
@@ -66,13 +112,16 @@ const Contact = () => {
 
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
                       className="border-2 rounded-md p-3 flex border-gray-300 focus:outline-none focus:border-primary"
                       type="text"
+                      name="user_name"
+                      value={formValues.user_name}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -81,6 +130,9 @@ const Contact = () => {
                     <input
                       className="border-2 rounded-md p-3 flex border-gray-300 focus:outline-none focus:border-primary"
                       type="text"
+                      name="user_mobile"
+                      value={formValues.user_mobile}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -90,6 +142,9 @@ const Contact = () => {
                   <input
                     className="border-2 p-3 rounded-md flex border-gray-300 focus:outline-none focus:border-primary"
                     type="email"
+                    name="user_email"
+                    value={formValues.user_email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -97,7 +152,10 @@ const Contact = () => {
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:outline-none focus:border-primary"
-                    type="email"
+                    type="text"
+                    name="user_subject"
+                    value={formValues.user_subject}
+                    onChange={handleChange}
                     required
                   />
                 </div>{" "}
@@ -105,7 +163,10 @@ const Contact = () => {
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
                     className="border-2 p-3 rounded-md border-gray-300 focus:outline-none focus:border-primary"
+                    name="user_message"
                     rows="10"
+                    value={formValues.user_message}
+                    onChange={handleChange}
                     placeholder="Write your message here"
                   ></textarea>
                 </div>
