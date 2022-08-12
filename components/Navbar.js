@@ -160,7 +160,10 @@ const Navbar = () => {
                 </button>
               </Link>
               <Link href={"/#contact"}>
-                <li className="uppercase text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white">
+                <li
+                  onClick={() => setShowNav(false)}
+                  className="uppercase text-left py-4 text-sm hover:bg-accent hover:rounded-md hover:pl-4 hover:ease-in hover:duration-300 hover:text-white"
+                >
                   Contact Me
                 </li>
               </Link>
