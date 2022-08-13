@@ -37,6 +37,7 @@ const Navbar = () => {
               alt="/"
               width={75}
               height={75}
+              placeholder="Loading..."
             />
           </a>
         </Link>

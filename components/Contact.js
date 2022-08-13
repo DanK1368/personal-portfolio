@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Link from "next/link";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -38,6 +39,10 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           if (result.status === 200) {
+            toast.success(
+              "Your message has been sent! I will get back to you as soon as I can.",
+              { toastId: "Success1" }
+            );
             setFormValues({
               user_subject: "",
               user_name: "",
@@ -48,7 +53,10 @@ const Contact = () => {
           }
         },
         (error) => {
-          console.log(error.text);
+          if (error) {
+            toast.error("Oops! Something went wrong. Please try again.");
+            console.log(error.text);
+          }
         }
       );
   };
