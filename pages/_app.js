@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
           "css",
           "tailwind",
         ]}
-        icon="/favicon.ico"
+        icon="/favicon.png"
         facebook={{
           image: "/screenshot.png",
           url: "https://danielkoett.xyz",
