@@ -21,7 +21,6 @@ export default function Home() {
         draggable
         pauseOnHover
       />
-      <ToastContainer />
 
       <Navbar />
       <Main />

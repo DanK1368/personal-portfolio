@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import mailImg from "../public/assets/mail.svg";
 import Image from "next/image";
@@ -6,7 +8,6 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Link from "next/link";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
-import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -39,10 +40,7 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           if (result.status === 200) {
-            toast.success(
-              "Your message has been sent! I will get back to you as soon as I can.",
-              { toastId: "Success1" }
-            );
+            toast.success("Email sent! I will get back to you asap.");
             setFormValues({
               user_subject: "",
               user_name: "",
@@ -54,7 +52,7 @@ const Contact = () => {
         },
         (error) => {
           if (error) {
-            toast.error("Oops! Something went wrong. Please try again.");
+            toast.error("Oops! Something went wrong. Please try again!");
             console.log(error.text);
           }
         }
