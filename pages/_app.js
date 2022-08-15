@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         twitter={{
           image: "/screenshot.png",
           site: "@DanielKtt1",
-          card: "/screenshot.png",
+          card: "summary",
         }}
       />
       <Component {...pageProps} />
