@@ -5,6 +5,7 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const router = useRouter();
@@ -20,6 +21,26 @@ const Navbar = () => {
     window.addEventListener("scroll", handleShowShadow);
   }, []);
 
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+    },
+  };
+
   return (
     <header
       className={
@@ -30,7 +51,15 @@ const Navbar = () => {
     >
       <div className=" flex justify-between items-center w-full h-full px-2 sm:px-6 md:px-10 2xl:px-16 ">
         <Link href={"/"}>
-          <a>
+          <motion.a
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 5,
+            }}
+          >
             <Image
               className="cursor-pointer"
               src={logo}
@@ -39,56 +68,71 @@ const Navbar = () => {
               height={75}
               placeholder="Loading..."
             />
-          </a>
+          </motion.a>
         </Link>
         <nav>
-          <ul className=" hidden md:flex md:justify-center md:items-center md:gap-10  ">
-            <Link href="/">
-              <li
-                className={` text-sm uppercase hover:border-b hover:border-b-primary hover:mb-[-1px] ${
-                  router.asPath === "/" ? "text-primary" : ""
-                }`}
-              >
-                Home
-              </li>
-            </Link>
-            <Link href={"/#about"}>
-              <li
-                className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
-                  router.asPath === "/#about" ? "text-primary" : ""
-                } `}
-              >
-                About
-              </li>
-            </Link>
-            <Link href={"/#skills"}>
-              <li
-                className={` text-sm uppercase hover:border-b hover:mb-[-1px]  ${
-                  router.asPath === "/#skills" ? "text-primary" : ""
-                }`}
-              >
-                Skills
-              </li>
-            </Link>
-            <Link href={"/#projects"}>
-              <li
-                className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
-                  router.asPath === "/#projects" ? "text-primary" : ""
-                }`}
-              >
-                Projects
-              </li>
-            </Link>
-            <Link href={"/#contact"}>
-              <li
-                className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
-                  router.asPath === "/#contact" ? "text-primary" : ""
-                }`}
-              >
-                Get In Touch
-              </li>
-            </Link>
-          </ul>
+          <motion.ul
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className=" hidden md:flex md:justify-center md:items-center md:gap-10  "
+          >
+            <motion.div variants={item}>
+              <Link href="/">
+                <li
+                  className={` text-sm uppercase hover:border-b hover:border-b-primary hover:mb-[-1px] ${
+                    router.asPath === "/" ? "text-primary" : ""
+                  }`}
+                >
+                  Home
+                </li>
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link href={"/#about"}>
+                <li
+                  className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
+                    router.asPath === "/#about" ? "text-primary" : ""
+                  } `}
+                >
+                  About
+                </li>
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link href={"/#skills"}>
+                <li
+                  className={` text-sm uppercase hover:border-b hover:mb-[-1px]  ${
+                    router.asPath === "/#skills" ? "text-primary" : ""
+                  }`}
+                >
+                  Skills
+                </li>
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link href={"/#projects"}>
+                <li
+                  className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
+                    router.asPath === "/#projects" ? "text-primary" : ""
+                  }`}
+                >
+                  Projects
+                </li>
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link href={"/#contact"}>
+                <li
+                  className={` text-sm uppercase hover:border-b hover:mb-[-1px] ${
+                    router.asPath === "/#contact" ? "text-primary" : ""
+                  }`}
+                >
+                  Get In Touch
+                </li>
+              </Link>
+            </motion.div>
+          </motion.ul>
 
           <div className=" md:hidden ">
             <button className=" btn btn-ghost " onClick={handleShowNav}>
