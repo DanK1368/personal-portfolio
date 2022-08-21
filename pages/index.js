@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Intro from "../components/Intro";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ChatBot from "../components/chatBot";
 
 export default function Home() {
   const [showPage, setShowPage] = useState(false);
@@ -46,14 +47,15 @@ export default function Home() {
       </AnimatePresence>
 
       {showPage && (
-        <>
+        <div className=" relative ">
           <Navbar />
           <Main />
+          <ChatBot />
           <About />
           <Skills />
           <Projects />
           <Contact />
-        </>
+        </div>
       )}
     </div>
   );

@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <SEO
-        title="DK | Full Stack Developer"
+        title="Daniel Kött | Full Stack Developer"
         description="A personal portfolio showing projects I worked on"
         keywords={[
           "website",
