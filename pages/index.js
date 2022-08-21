@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Intro from "../components/Intro";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ChatBot from "../components/chatBot";
+import ChatBot from "../components/ChatBot";
 
 export default function Home() {
   const [showPage, setShowPage] = useState(false);
