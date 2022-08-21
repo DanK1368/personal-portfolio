@@ -6,7 +6,7 @@ const ChatBot = () => {
   return (
     <motion.div
       drag
-      className=" w-full sticky top-[700px] z-50  min-h-[10vh] flex items-center justify-end pr-10"
+      className=" w-full sticky top-[650px] z-50 min-h-[10vh] flex items-center justify-end pr-10 xs:top[750px]"
     >
       <div className=" animate-bounce right-0 max-w-[40px] ">
         <Image src={robotSvg} alt="" />

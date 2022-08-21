@@ -5,7 +5,10 @@ import emoji from "../public/assets/icons/waveEmoji.svg";
 
 const Main = () => {
   return (
-    <main id="home" className=" w-full h-[90vh] text-center ">
+    <main
+      id="home"
+      className=" w-full h-[75vh] mb-10 xs:h-[90vh] xs:mb-0 text-center "
+    >
       <div className=" max-w-[1240px] w-full h-full mx-auto flex justify-center items-center ">
         <div>
           <h1 className=" py-4 text-gray-700 leading-snug  ">
