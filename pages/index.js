@@ -12,7 +12,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import ChatBot from "../components/ChatBot";
 import ChatModal from "../components/ChatModal";
 
+import { auth } from "../lib/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 export default function Home() {
+  const [user] = useAuthState(auth);
+
   const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {

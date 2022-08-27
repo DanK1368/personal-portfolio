@@ -24,7 +24,7 @@ const About = () => {
         </div>
 
         <div className="flex justify-center items-center pt-10  avatar h-auto m-auto  hover:scale-105 ease-in duration-100">
-          <div className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl shadow-gray-400 rounded-full">
+          <div className=" ring ring-primary ring-offset-base-100 ring-offset-2 shadow-xl shadow-gray-400 rounded-full">
             <Image
               className="rounded-full object-cover "
               src={profilePic}
